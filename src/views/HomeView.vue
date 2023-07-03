@@ -83,7 +83,7 @@
                     suffix-icon="el-icon-map-location" class="ml-5"></el-input>
           <el-button class="ml-5" type="primary">搜索</el-button>
         </div>
-        <el-table :data="tableData">
+        <el-table :data="tableData" border stripe header-row-class-name="tableHeader">
           <el-table-column prop="date" label="日期" width="140">
           </el-table-column>
           <el-table-column prop="name" label="姓名" width="120">
@@ -93,8 +93,7 @@
 
         <div style="padding: 10px;">
           <div class="block">
-            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
-                           :current-page="currentPage4" :page-sizes="[10, 30, 50, 100]" :page-size="10"
+            <el-pagination :page-sizes="[10, 30, 50, 100]" :page-size="10"
                            layout="total, sizes, prev, pager, next, jumper" :total="100">
             </el-pagination>
           </div>
@@ -111,9 +110,8 @@
   line-height: 60px;
 }
 
-.el-aside {
-  background-color: #b3c0d1;
-  color: #333;
+.tableHeader,th{
+  background-color: #b3c0d1 !important;
 }
 </style>
 
