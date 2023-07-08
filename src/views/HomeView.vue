@@ -74,6 +74,13 @@
       </el-header>
 
       <el-main>
+        <div style="margin-bottom: 30px">
+          <el-breadcrumb separator="/">
+            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item>用户管理</el-breadcrumb-item>
+          </el-breadcrumb>
+        </div>
+
         <div style="margin: 10px 0;">
           <el-input style="width: 300px;" placeholder="数据连接中......检测到输入名称......"
                     suffix-icon="el-icon-user" class="ml-5"></el-input>
@@ -95,7 +102,7 @@
           </el-button>
         </div>
 
-        <el-table :data="tableData" border stripe header-row-class-name="tableHeader" class="tableHeader">
+        <el-table :data="tableData" border stripe header-row-class-name="tableHeader">
           <el-table-column prop="date" label="日期" width="120">
           </el-table-column>
           <el-table-column prop="name" label="姓名" width="120">
@@ -109,7 +116,7 @@
           </el-table-column>
         </el-table>
 
-        <div style="padding: 10px;">
+        <div style="padding: 10px 0;">
           <div class="block">
             <el-pagination :page-sizes="[10, 30, 50, 100]" :page-size="10"
                            layout="total, sizes, prev, pager, next, jumper" :total="100">
